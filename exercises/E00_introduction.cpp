@@ -1,11 +1,15 @@
+#include <iostream>
+#include <ostream>
 #include <SDL3/SDL.h>
+
+
 
 int main(void)
 {
 	SDL_Log("hello sdl");
 	
-	float window_w = 800;
-	float window_h = 600;
+	float window_w = 1200;
+	float window_h = 800;
 	int target_framerate_ms = 1000 / 60;       // 16 milliseconds
 	int target_framerate_ns = 1000000000 / 60; // 16666666 nanoseconds
 
@@ -39,7 +43,22 @@ int main(void)
 	player_rect.y = window_h / 2 - player_size / 2;
 
 
+	float ground = 50;
+	SDL_FRect ground_rect;
+	ground_rect.w = ground;
+	ground_rect.h = ground/2;
+	ground_rect.x = window_w;
+	ground_rect.y = window_h;
+
+
 	bool btn_pressed_up = false;
+
+
+	float player_speed = 10;
+	float jumpForce = 5;
+	int pX = 0;
+	float pY = 0;
+	bool isGrounded = true;
 
 	SDL_GetCurrentTime(&walltime_frame_beg);
 	while(!quit)
@@ -54,11 +73,58 @@ int main(void)
 					quit = true;
 					break;
 				case SDL_EVENT_KEY_DOWN:
-					if(event.key.key >= SDLK_0 && event.key.key < SDLK_5)
+					if(event.key.key >= SDLK_0 && event.key.key < SDLK_5) {
 						delay_type = event.key.key - SDLK_0;
+					}
+
+					//find direction
+					if (event.key.key == SDLK_A){
+						pX = -1;
+					}
+					if (event.key.key == SDLK_D){
+						pX = +1;
+					}
+					if (event.key.key == SDLK_SPACE) {
+						if (isGrounded) {
+							std::cout << "Jump" << std::endl;
+							isGrounded = false;
+							pY = -1;
+						}
+					}
+
+					std::cout << pX << " - " << pY << std::endl;
+
+					break;
+					case SDL_EVENT_GetKeyState(NULL):
+						//pX = 0;
+						//pY = 0;
 					break;
 			}
 		}
+
+		float gravity = 1;
+
+		//add gravity?
+		if (!isGrounded && pY < 1) {
+			if (pY>0) {
+		//		gravity = 3;
+			}
+			pY += 0.01;
+			std::cout << "~~ " << pY << std::endl;
+		}
+		else {
+			pY = 0;
+			isGrounded = true;
+		}
+
+		//check boarders before moving
+		if (abs(player_rect.x) < window_w/2 - 100) {
+			//move player
+		}
+
+		player_rect.x += player_speed * pX;
+		player_rect.y += jumpForce * pY * gravity;
+
 
 		// clear screen
 		// NOTE: `0x` prefix means we are expressing the number in hexadecimal (base 16)
@@ -66,8 +132,11 @@ int main(void)
 		SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0x00);
 		SDL_RenderClear(renderer);
 		
-		SDL_SetRenderDrawColor(renderer, 0x3C, 0x63, 0xFF, 0XFF);
+		SDL_SetRenderDrawColor(renderer, 0x1C, 0x83, 0xFF, 0XFF);
 		SDL_RenderFillRect(renderer, &player_rect);
+
+		SDL_SetRenderDrawColor(renderer, 0x4C, 0x23, 0xFF, 0XFF);
+		SDL_RenderFillRect(renderer, &ground_rect);
 
 		SDL_GetCurrentTime(&walltime_work_end);
 		time_elapsed_work = walltime_work_end - walltime_frame_beg;
