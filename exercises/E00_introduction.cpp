@@ -3,6 +3,31 @@
 #include <SDL3/SDL.h>
 
 
+// void readPlayerMovementInput(SDL_Keycode input) {
+//
+// }
+//
+// void readPlayerJumpInput(SDL_Keycode input) {
+//
+// }
+//
+//
+// void playerMovement(SDL_FRect playerRect, int direction, float moSpeed) {
+// 	playerRect.x += moSpeed * direction;
+// }
+//
+// void playerJump(SDL_FRect playerRect, int jumpForce) {
+// 	playerRect.y += jumpForce;
+// }
+//
+// void applyGravity(SDL_FRect obj, int groundHeight) {
+// 	if (obj.y > groundHeight) {
+// 		obj.y = groundHeight;
+// 	}
+//
+// 	obj.y -= obj.w * 2;
+// }
+
 
 int main(void)
 {
@@ -67,6 +92,7 @@ int main(void)
 		SDL_Event event;
 		while(SDL_PollEvent(&event))
 		{
+			int nums;
 			switch(event.type)
 			{
 				case SDL_EVENT_QUIT:
@@ -94,10 +120,6 @@ int main(void)
 
 					std::cout << pX << " - " << pY << std::endl;
 
-					break;
-					case SDL_EVENT_GetKeyState(NULL):
-						//pX = 0;
-						//pY = 0;
 					break;
 			}
 		}

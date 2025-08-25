@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="BackendCodeEditorMiscSettings">
-    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="2009" type="long" />
+    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="2003" type="long" />
   </component>
   <component name="CMakePresetLoader">{
   &quot;useNewFormat&quot;: true
@@ -33,7 +33,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6481332d-6374-4d99-89fd-dc97a2b9d163" name="Changes" comment="" />
+    <list default="true" id="6481332d-6374-4d99-89fd-dc97a2b9d163" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/live_coding/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercises/E00_introduction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/exercises/E00_introduction.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,7 +49,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/lib/SDL" />
     <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectApplicationVersion">
@@ -79,8 +84,8 @@
     "RunOnceActivity.west.config.association.type.startup.service": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Uni/Git/game-programming-25",
+    "git-widget-placeholder": "release-3.2.18",
+    "last_opened_file_path": "D:/Uni/Git/game-programming-25/live_coding",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,12 +95,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Uni\Git\game-programming-25\live_coding" />
+    </key>
+  </component>
   <component name="RunManager" selected="CMake Application.E00_introduction.cpp">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="00_hello_world" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gp25_exercises" TARGET_NAME="00_hello_world" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="gp25_exercises" RUN_TARGET_NAME="00_hello_world">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -178,7 +183,9 @@
       <updated>1756072170653</updated>
       <workItem from="1756072172000" duration="108000" />
       <workItem from="1756072308965" duration="1567000" />
-      <workItem from="1756123700342" duration="10181000" />
+      <workItem from="1756123700342" duration="11107000" />
+      <workItem from="1756137373101" duration="726000" />
+      <workItem from="1756139945050" duration="463000" />
     </task>
     <servers />
   </component>
